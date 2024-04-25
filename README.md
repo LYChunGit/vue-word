@@ -18,4 +18,5 @@ function completed(value) {
 ```
 效果图
 ---
-<!-- ![图片](https://note.youdao.com/favicon.ico) -->
+![图片](image/1.png)
+![图片](image/2.png)
