@@ -4,7 +4,8 @@
       <div v-for="(v, index) in codeArr" :key="index" class="phone-code-verify-container-labels-items"
         :style="v.cIsSelect ? 'border: 2px solid #707AFD;pointer-events:auto;' : 'border: 2px solid #E5E6EB;pointer-events:none;'">
         <input type="number" :id="v.cId" maxlength="1" v-model="v.cValue" @keyup="setValue(index)"
-          @input="$forceUpdate()" @keyup.delete="onDelete(index)"/>
+          @input="$forceUpdate()" @keyup.delete="onDelete(index)"
+          onpaste="return false"  oncopy="return false" oncut="return false" oncontextmenu="return false"/>
       </div>
     </div>
   </div>
@@ -77,7 +78,7 @@ function nextFocus() {
 function onDelete(index) {
   // 如果是第1格，不触发光标移动至上一个输入框
   let i = index == 0 ? 0 : index - 1;
-  codeArr.value[i].cValue = "";
+  codeArr.value[index].cValue = "";
   elementByIdSetFocus(i);
 }
 
